@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>OpenGL-API</title>
+    </head>
+    <body>
+
+        <script src="ress/openglapi.js"></script>
+
+        <script>
+        	
+        	var gl = new OpenGL();
+
+        	gl.initScene('700', '100', '100', 'firstScene');
+        	gl.initCamera('100', '100', '100', 'firstCamera');
+        	gl.render(`
+                <div id="image"><img id="1" src="webress/ferrari.png">
+            `);
+            /*var o1 = document.getElementById('1');
+            var o1 = document.getElementById('1');*/
+            //${carName}
+
+            var red = '#ff0000';
+            var black = '#000000';
+
+            gl.setMenu('Menu', `
+                <p>Voiture</p>
+                <input type="color" value="${red}">
+            `, `
+                <p>Roue</p>
+                <input type="color" value="${black}">
+            `, ``, ``);
+
+            var car = document.getElementById('1');
+            var data = document.getElementById('data');
+
+        </script>
+
+    </body>
+</html>
